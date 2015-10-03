@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// jQuery(function(){
+//   interval = setInterval(testFunction, 4000);
+
+  // function testFunction(){
+  // 	alert("tests");
+  // }
+// });

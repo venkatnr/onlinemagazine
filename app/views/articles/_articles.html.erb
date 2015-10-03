@@ -1,0 +1,19 @@
+<h4>Article</h4>
+<% articles.each do |article|%>
+	Article Name: <%= article.name%> <br>
+	Article Description: <%= article.description%> <br>
+	<h5><u> Comments </u> </h5>
+
+	<%= form_tag("/articles/#{article.id}/create_comment", remote: true, :id => "comment_form_#{article.id}") do %>
+		<div class="form-group">
+	    <input type="text" class="form-control" name="article[comment_name]" placeholder="Comment">
+	  </div>
+	<% end %>
+	<div id="comment_list_<%=article.id%>">
+		<% if article.comments %>
+			<%= render :partial => 'comments',:locals=>{:comments => article.comments } %>
+		<%end%>
+	</div>
+	<hr>
+	<br>
+<% end %>

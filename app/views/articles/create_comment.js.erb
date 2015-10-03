@@ -1,0 +1,2 @@
+  $("#comment_form_<%=@article.id%>")[0].reset();
+	$("#comment_list_<%=@article.id%>").html("<%= escape_javascript(render :partial => 'comments',:locals=>{:comments =>@comments })%>");	
