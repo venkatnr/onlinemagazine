@@ -15,10 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
-// jQuery(function(){
-//   interval = setInterval(testFunction, 4000);
+jQuery(function(){
+  interval = setInterval(testFunction, 4000);
 
-  // function testFunction(){
-  // 	alert("tests");
-  // }
-// });
+  function testFunction(){
+  	$.ajax({url: "/articles/update_comments", type: 'get'});
+  }
+});

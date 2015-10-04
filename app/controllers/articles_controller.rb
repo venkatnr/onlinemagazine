@@ -11,9 +11,13 @@ class ArticlesController < ApplicationController
 
   def create_comment
   	@article = Article.find params[:id]
-  	 @article.comments.create(comment_params)
-  	 @comments = @article.comments
+  	@article.comments.create(comment_params)
+  	@comments = @article.comments
   	respond_to :js
+  end
+
+  def update_comments
+  	@articles = Article.includes(:comments)
   end
 
   private
