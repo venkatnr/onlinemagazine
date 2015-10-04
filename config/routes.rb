@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :articles do 
+    collection do
+      get "update_comments"
+    end
     member do
       post "create_comment"
     end

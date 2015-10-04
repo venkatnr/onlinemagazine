@@ -1,3 +1,5 @@
-<% @articles.each do |article| %>
-	$("#comment_list_<%=article.id%>").html("<%= escape_javascript(render :partial => 'comments',:locals=>{:comments =>article.comments })%>");
+<%if @articles%>
+	<% @articles.each do |article| %>
+		$("#comment_list_<%=article.id%>").html("<%= escape_javascript(render :partial => 'comments',:locals=>{:comments =>article.comments })%>");
+	<% end %>	
 <% end %>	
